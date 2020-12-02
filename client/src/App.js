@@ -276,37 +276,7 @@ class ColorSelector extends React.Component {
     )
   }
 }
-class AuthModal extends Component {
-    constructor(props, context) {
-        super(props, context);
-    }
-    render() {
-        const icon = this.props.loading ? <img src="images/loading.gif" /> : <span className="glyphicon glyphicon-log-in"></span>;
-        const button_mode = this.props.loading ? "btn-github" : "btn-openid";
-        const sign_in_text = this.props.loading ? "Loading..." : "Sign in with Genomelink";
-        return (
-            <div>
-                <Modal show={this.props.show}>
-                    <Modal.Header>
-                        <Modal.Title>Welcome!</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <h4>Thanks for visiting DNAvatar</h4>
-                        <p>
-                            {"We're here to make you an avatar based entirely on what your DNA says you look like! Before we being though, we'll need you to sign into Genomelink so we can get a sense of your physical makeup."}
-                        </p>
-                        <p>
-                            <a className={"btn btn-block btn-social " + button_mode} href={this.props.authorize_url}>
-                                {icon}
-                                {sign_in_text}
-                            </a>
-                        </p>
-                    </Modal.Body>
-                </Modal>
-            </div>
-        );
-    }
-}
+
 
 class Footer extends Component {
     render() {
@@ -435,7 +405,6 @@ class App extends Component {
         return (
             <div className="app">
                 <NavigationBar />
-                <AuthModal show={this.state.showModal} authorize_url={this.state.authorize_url} loading={this.state.loading}  />
                 <div className="container">
                     <Grid>
                         <Row>
